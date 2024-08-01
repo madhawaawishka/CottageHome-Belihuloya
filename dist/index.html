@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="icon" type="image/jpg" href="../assets/logo1.png">
+  <script>
+    // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+    } else {
+        document.documentElement.classList.remove('dark')
+    }
+</script>
+    <script src="https://unpkg.com/flowbite@1.4.1/dist/flowbite.js"></script>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.4.1/flowbite.min.css" rel="stylesheet" />
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cottage Home Belihuloya</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="output.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    
+
+</head>
+<body class="bg-slate-50 dark:bg-neutral-900">
+    
+    
+    <nav class="bg-white border-gray-200 py-2.5 dark:bg-neutral-900">
+        <div class="flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto">
+            <a href="index.html" class="flex items-center">
+                <img src="../assets/logo1.png" class="h-10 mr-3 sm:h-20" alt="CottageHome Logo">
+            </a>
+            <div class="flex items-center lg:order-2">
+                <div class="hidden mt-2 mr-4 sm:inline-block">
+                    <span></span>
+                </div>   
+    
+                <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
+                    <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                    <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+                </button>
+        
+                <button data-collapse-toggle="mobile-menu-2" type="button"
+                    class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                    aria-controls="mobile-menu-2" aria-expanded="true">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                            d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                    <svg class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="items-center justify-between w-full lg:flex lg:w-auto lg:order-1" id="mobile-menu-2">
+                <ul class="flex flex-col mt-4 font-bold lg:flex-row lg:space-x-8 lg:mt-0">
+                    <li>
+                        <a href="index.html"
+                            class="block py-2 pl-3 pr-4 text-white rounded bg-neutral-800 dark:bg-neutral-900 lg:bg-transparent lg:text-blue-700 lg:p-0 dark:text-blue-700"
+                            aria-current="page">Home</a>
+                    </li>
+                    <li>
+                        <a href="Cottages.html"
+                        class="block py-2 pl-3 pr-4 border-gray-100 border-separate-b text-b hover:bg-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-black lg:p-0 dark:text-white lg:dark:hover:text-white dark:hover:bg-neutral-800 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Cottages</a>
+                    </li>
+                    <li>
+                        <a href="ContactUs.html"
+                        class="block py-2 pl-3 pr-4 text-black border-b border-gray-100 hover:bg-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-black lg:p-0 dark:text-white lg:dark:hover:text-white dark:hover:bg-neutral-800 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"                            
+                        >Contact Us</a>
+                    </li>
+                    <li>
+                        <a href="FAQ.html"
+                        class="block py-2 pl-3 pr-4 text-black border-b border-gray-100 hover:bg-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-black lg:p-0 dark:text-white lg:dark:hover:text-white dark:hover:bg-neutral-800 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">FAQ</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+      <!-- javascript dark  mode triggers -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+      <script>
+          var themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+  var themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+  
+  // Change the icons inside the button based on previous settings
+  if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      themeToggleLightIcon.classList.remove('hidden');
+  } else {
+      themeToggleDarkIcon.classList.remove('hidden');
+  }
+  
+  var themeToggleBtn = document.getElementById('theme-toggle');
+  
+  themeToggleBtn.addEventListener('click', function() {
+  
+      // toggle icons inside button
+      themeToggleDarkIcon.classList.toggle('hidden');
+      themeToggleLightIcon.classList.toggle('hidden');
+  
+      // if set via local storage previously
+      if (localStorage.getItem('color-theme')) {
+          if (localStorage.getItem('color-theme') === 'light') {
+              document.documentElement.classList.add('dark');
+              localStorage.setItem('color-theme', 'dark');
+          } else {
+              document.documentElement.classList.remove('dark');
+              localStorage.setItem('color-theme', 'light');
+          }
+  
+      // if NOT set via local storage previously
+      } else {
+          if (document.documentElement.classList.contains('dark')) {
+              document.documentElement.classList.remove('dark');
+              localStorage.setItem('color-theme', 'light');
+          } else {
+              document.documentElement.classList.add('dark');
+              localStorage.setItem('color-theme', 'dark');
+          }
+      }
+      
+  });
+      </script>
+  
+
+
+  <div class="relative overflow-hidden bg-white dark:bg-neutral-900" data-aos="fade-up" data-aos-duration="3000">
+    <div class="pt-16 pb-80 sm:pt-24 sm:pb-40 lg:pt-40 lg:pb-48">
+      <div class="relative px-4 mx-auto max-w-7xl sm:static sm:px-6 lg:px-8">
+        <div class="sm:max-w-lg">
+            <p class="text-4xl font-bold text-transparent text-blue-700 font-rubik md:text-6xl bg-clip-text bg-gradient-to-tr to-cyan-500 from-blue-600">COTTAGE HOME</p>
+            <p class="text-4xl font-bold md:text-6xl dark:text-white">BELIHULOYA</p>
+          <p class="mt-4 text-xl font-bold text-gray-900 dark:text-gray-200">A serene escape nestled in nature. Discover tranquility
+             and comfort at our cozy retreat.</p>
+        </div>
+        <div>
+          <div class="mt-10">
+            <!-- Decorative image grid -->
+            <div aria-hidden="true" class="pointer-events-none lg:absolute lg:inset-y-0 lg:mx-auto lg:w-full lg:max-w-7xl">
+              <div class="absolute transform sm:left-1/2 sm:top-0 sm:translate-x-8 lg:left-1/2 lg:top-1/2 lg:-translate-y-1/2 lg:translate-x-8">
+                <div class="flex items-center space-x-6 lg:space-x-8">
+                  <div class="grid flex-shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
+                    <div class="h-64 overflow-hidden rounded-lg w-44 sm:opacity-0 lg:opacity-100">
+                      <img src="../assets/IMG_8487.JPG" class="object-cover object-center w-full h-full" alt="1">
+                    </div>
+                    <div class="h-64 overflow-hidden rounded-lg w-44">
+                      <img src="../assets/woodc3.jpg" alt="2" class="object-cover object-center w-full h-full">
+                    </div>
+                  </div>
+                  <div class="grid flex-shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
+                    <div class="h-64 overflow-hidden rounded-lg w-44">
+                      <img src="../assets/c27.JPG" alt="3" class="object-cover object-center w-full h-full">
+                    </div>
+                    <div class="h-64 overflow-hidden rounded-lg w-44">
+                      <img src="../assets/IMG_8484.JPG" alt="4" class="object-cover object-center w-full h-full">
+                    </div>
+                    <div class="h-64 overflow-hidden rounded-lg w-44">
+                      <img src="../assets/g1.JPG" alt="5" class="object-cover object-center w-full h-full">
+                    </div>
+                  </div>
+                  <div class="grid flex-shrink-0 grid-cols-1 gap-y-6 lg:gap-y-8">
+                    <div class="h-64 overflow-hidden rounded-lg w-44">
+                      <img src="../assets/2024_04_08_11_32_IMG_0713.JPG" alt="6" class="object-cover object-center w-full h-full">
+                    </div>
+                    <div class="h-64 overflow-hidden rounded-lg w-44">
+                      <img src="../assets/433353504.jpg" alt="7" class="object-cover object-center w-full h-full">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+            <a href="https://www.booking.com/hotel/lk/cottage-home.en-gb.html" 
+            class="inline-block px-8 py-3 font-medium text-center text-white bg-blue-700 border border-transparent rounded-md hover:bg-indigo-700">Book a cottage</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+
+
+
+
+
+
+
+
+  
+
+  <div class="h-auto dark:bg-neutral-900" >
+    <div class="pt-8 bg-gray-50 dark:bg-neutral-900 sm:pt-20">
+      <div class="max-w-screen-xl px-4 mx-auto sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-3xl font-extrabold leading-9 text-gray-900 dark:text-white sm:text-4xl sm:leading-10">
+            Trusted by Customers
+          </h2>
+        </div>
+      </div>
+      <div class="pb-12 mt-10 bg-gray-50 dark:bg-neutral-900 sm:pb-16">
+        <div class="relative">
+          <div class="absolute inset-0 h-1/2 bg-gray-50 dark:bg-neutral-900"></div>
+          <div class="relative max-w-screen-xl px-4 mx-auto sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto">
+              <dl class="bg-white rounded-lg shadow-lg dark:bg-neutral-800 sm:grid sm:grid-cols-3">
+                <div
+                  class="flex flex-col p-6 text-center border-b border-gray-100 dark:border-gray-700 sm:border-0 sm:border-r">
+                  <dt class="order-2 mt-2 text-lg font-medium leading-6 text-gray-500 dark:text-gray-400" id="item-1">
+                    Properties Available
+                  </dt>
+                  <dd class="order-1 text-5xl font-extrabold leading-none text-indigo-600 dark:text-white"
+                    aria-describedby="item-1" id="starsCount">
+                    0
+                  </dd>
+                </div>
+                <div
+                  class="flex flex-col p-6 text-center border-t border-b border-gray-100 dark:border-gray-700 sm:border-0 sm:border-l sm:border-r">
+                  <dt class="order-2 mt-2 text-lg font-medium leading-6 text-gray-500 dark:text-gray-400">
+                    Booking Completed
+                  </dt>
+                  <dd class="order-1 text-5xl font-extrabold leading-none text-indigo-600 dark:text-white"
+                    id="downloadsCount">
+                    0
+                  </dd>
+                </div>
+                <div
+                  class="flex flex-col p-6 text-center border-t border-gray-100 dark:border-gray-700 sm:border-0 sm:border-l">
+                  <dt class="order-2 mt-2 text-lg font-medium leading-6 text-gray-500 dark:text-gray-400">
+                    Happy Customers
+                  </dt>
+                  <dd class="order-1 text-5xl font-extrabold leading-none text-indigo-600 dark:text-white"
+                    id="sponsorsCount">
+                    0
+                  </dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    const targets = [
+      { element: document.getElementById('starsCount'), count: 3, suffix: '+' },
+      { element: document.getElementById('downloadsCount'), count: 250, suffix: '+' },
+      { element: document.getElementById('sponsorsCount'), count: 350, suffix: '+' }
+    ];
+  
+    // Find the maximum count among all targets
+    const maxCount = Math.max(...targets.map(target => target.count));
+  
+    // Function to animate count-up effect
+    function animateCountUp(target, duration) {
+      let currentCount = 0;
+      const increment = Math.ceil(target.count / (duration / 1));
+  
+      const interval = setInterval(() => {
+        currentCount += increment;
+        if (currentCount >= target.count) {
+          clearInterval(interval);
+          currentCount = target.count;
+          target.element.textContent = currentCount + target.suffix;
+        } else {
+          target.element.textContent = currentCount;
+        }
+      }, 1);
+    }
+  
+    // Animate count-up for each target with adjusted duration
+    targets.forEach(target => {
+      animateCountUp(target, maxCount / 1); // Adjust duration based on max count
+    });
+  </script>
+
+
+
+<section id="testimonies" class="mb-20 dark:bg-neutral-900 bg-slate-50">
+  <div class="max-w-6xl mx-8 md:mx-10 lg:mx-20 xl:mx-auto" data-aos="fade-left" data-aos-anchor="#example-anchor" data-aos-offset="1000" data-aos-duration="1000">
+
+
+      <div class="transition duration-500 ease-in-out transform scale-100 translate-x-0 translate-y-0 opacity-100">
+          <div class="mb-12 space-y-5 md:mb-16 md:text-center">
+              <div
+                  class="inline-block px-3 py-1 text-sm font-semibold text-black rounded-lg dark:text-indigo-100 md:text-center text-cn bg-neutral-800 bg-opacity-60 hover:cursor-pointer hover:bg-opacity-40">
+                  Words from Others
+              </div>
+              <h1 class="mb-5 text-5xl font-bold text-blue-700 dark:text-white md:text-center md:text-5xl">
+                  It's not just us.
+              </h1>
+              <p class="text-xl text-black dark:text-gray-100 md:text-center md:text-2xl">
+                  Here's what others have to say about us.
+              </p>
+          </div>
+      </div>
+
+
+      <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+
+
+          <ul class="space-y-8">
+              <li class="text-sm leading-6">
+                  <div class="relative group">
+                      <div
+                          class="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
+                      </div>
+                          <div
+                              class="relative p-6 space-y-6 leading-none rounded-lg dark:bg-neutral-900 ring-1 ring-gray-900/5 bg-slate-100">
+                              <div class="flex items-center space-x-4"><img
+                                      src="../assets/reviews/nimantha madushan.png"
+                                      class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Kanye West">
+                                  <div>
+                                      <h3 class="text-lg font-semibold text-black dark:text-white">Nimantha Madhushan</h3>
+                                      <p class="text-black dark:text-gray-500 text-md">Local Guide</p>
+                                  </div>
+                              </div>
+                              <p class="leading-normal text-black dark:text-gray-300 text-md">It is a very great place to stay in Belihuloya. We stayed two days.
+                                 The owner is very friendly and kindly person. There are several kitchen appliances and equipment for cooking. Highly recommended place..😎</p>
+                          </div>
+                      </a>
+                  </div>
+              </li>
+              <li class="text-sm leading-6">
+                  <div class="relative group">
+                      <div
+                          class="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
+                      </div>
+                          <div
+                              class="relative p-6 space-y-6 leading-none rounded-lg dark:bg-neutral-900 bg-slate-100 ring-1 ring-gray-900/5">
+                              <div class="flex items-center space-x-4"><img
+                                      src="../assets/reviews/luis.avif"
+                                      class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Tim Cook">
+                                  <div>
+                                      <h3 class="text-lg font-semibold text-black dark:text-white">Luis</h3>
+                                      <p class="text-black dark:text-gray-500 text-md">Foreign Visitor from Germany</p>
+                                  </div>
+                              </div>
+                              <p class="leading-normal dark:text-gray-300 text-md">The Cottage home was really clean and well equipped :) we even had our own washing machine ! The owner is super nice and makes you feel comfortable and at home. I can really recommend this stay</p>
+                          </div>
+                      </a>
+                  </div>
+              </li>
+              <li class="text-sm leading-6">
+                  <div class="relative group">
+                      <div
+                          class="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
+                      </div>
+                          <div
+                              class="relative p-6 space-y-6 leading-none rounded-lg dark:bg-neutral-900 ring-1 bg-slate-100 ring-gray-900/5">
+                              <div class="flex items-center space-x-4"><img
+                                      src="../assets/reviews/thiwanka.avif"
+                                      class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Kanye West">
+                                  <div>
+                                      <h3 class="text-lg font-semibold dark:text-white">Thilina</h3>
+                                      <p class="dark:text-gray-500 text-md">Local Guide</p>
+                                  </div>
+                              </div>
+                              <p class="leading-normal dark:text-gray-300 text-md">Friendly staff
+                                Breakfast was really good ❤️
+                                Recommended for everyone (local and foreign )
+                                Plenty of space feel like home</p>
+                          </div>
+                      </a>
+                  </div>
+              </li>
+              <li class="text-sm leading-6">
+                  <div class="relative group">
+                      <div
+                          class="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
+                      </div>
+                          <div
+                              class="relative p-6 space-y-6 leading-none rounded-lg dark:bg-neutral-900 ring-1 bg-slate-100 ring-gray-900/5">
+                              <div class="flex items-center space-x-4"><img
+                                      src="../assets/reviews/ravihara weerathunga.png"
+                                      class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Tim Cook">
+                                  <div>
+                                      <h3 class="text-lg font-semibold dark:text-white">Ravihara Weerathunge</h3>
+                                      <p class="dark:text-gray-500 text-md">Local Guide</p>
+                                  </div>
+                              </div>
+                              <p class="leading-normal dark:text-gray-300 text-md">It was a 2 night stay, and the place is decent. Clean room, bathroom, and dining area. Wish we had hot bathing water, though. The owner is very polite and ateded to our matters promptly. Highly recommend if you are Ok with cold water for a night time bath.
+
+                                Nearby activities: Nonpareil mountain hike, Belihul oya, and much more.</p>
+                          </div>
+                      </a>
+                  </div>
+              </li>
+          </ul>
+
+
+          <ul class="hidden space-y-8 sm:block">
+              <li class="text-sm leading-6">
+                  <div class="relative group">
+                      <div
+                          class="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
+                      </div>
+                          <div
+                              class="relative p-6 space-y-6 leading-none rounded-lg dark:bg-neutral-900 bg-slate-100 ring-1 ring-gray-900/5">
+                              <div class="flex items-center space-x-4"><img
+                                      src="../assets/reviews/ana1.jpg"
+                                      class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Parag Agrawal">
+                                  <div>
+                                      <h3 class="text-lg font-semibold dark:text-white">Anna</h3>
+                                      <p class="dark:text-gray-500 text-md">Foreign Visitor from Russia</p>
+                                  </div>
+                              </div>
+                              <p class="leading-normal dark:text-gray-300 text-md">Great location close to many different hiking trails. You can get a bus easily to and from the property.
+                                There is hot water with good pressure.
+                                Comfortable mattress.
+                                Kitchen equipment, such as electrical kettle and rice cooker.
+                                The owner was very helpful and was at our disposal at any time</p>
+                          </div>
+                      </a>
+                  </div>
+              </li>
+              <li class="text-sm leading-6">
+                  <div class="relative group">
+                      <div
+                          class="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
+                      </div>
+                          <div
+                              class="relative p-6 space-y-6 leading-none rounded-lg dark:bg-neutral-900 bg-slate-100 ring-1 ring-gray-900/5">
+                              <div class="flex items-center space-x-4"><img
+                                      src="../assets/reviews/thimas.jpg"
+                                      class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Tim Cook">
+                                  <div>
+                                      <h3 class="text-lg font-semibold dark:text-white">Thomas</h3>
+                                      <p class="dark:text-gray-500 text-md">Foreign Visitor from UK</p>
+                                  </div>
+                              </div>
+                              <p class="leading-normal dark:text-gray-300 text-md">We stayed here for one night we enjoyed it so much we extended for another night. The host is a very sweet & warm person. He is an interesting man and keeps his home and the guest apartments very clean so much so I was impressed at how neat and well thought out the spaces were. They smelled very fresh as did the bed linens and towels 🙂 We stayed in the budget room equipped with two huge beds, fluffy pillows a fan, great shower with hot water & huge kitchen with a fridge. This was so needed and appreciated after spending the whole day exploring waterfalls and trekking through the stunning scenery that surrounds this homestay. The host has a beautiful garden with tropical flowers and spaces for guests to sit and enjoy the garden also you can enjoy the many authentic & delicious breakfast, lunches & dinners the host will provide at a very reasonable cost. He truly takes the hassle out of everything for you and will go miles out of his way for you. We felt very safe and extremely cared for here. There are gates with locks on for your scooter and your own private access to the building. This homestay is in one of the most beautiful and historical regions in Sri Lanka. Stay here and you will not be disappointed. Istouti for a fabulous experience ⭐⭐⭐⭐⭐</p>
+                          </div>
+                      </a>
+                  </div>
+              </li>
+             
+          </ul>
+
+
+          <ul class="hidden space-y-8 lg:block">
+              <li class="text-sm leading-6">
+                  <div class="relative group">
+                      <div
+                          class="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
+                      </div>
+                          <div
+                              class="relative p-6 space-y-6 leading-none rounded-lg dark:bg-neutral-900 ring-1 ring-gray-900/5 bg-slate-100">
+                              <div class="flex items-center space-x-4"><img
+                                      src="../assets/reviews/chalitha yasas.png"
+                                      class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Satya Nadella">
+                                  <div>
+                                      <h3 class="text-lg font-semibold dark:text-white">Chalitha yasas Ranasinghe</h3>
+                                      <p class="dark:text-gray-500 text-md">Local Guide</p>
+                                  </div>
+                              </div>
+                              <p class="leading-normal dark:text-gray-300 text-md">We had an amazing time at Cottage Home Belihuloya! The cozy atmosphere, coupled with 
+                                the reasonable pricing, made our stay truly special. The serene surroundings added to the charm, creating a perfect retreat for couples. 
+                                The hospitality was outstanding, 
+                                and we highly recommend Cottage Home for a delightful and affordable getaway.</p>
+                          </div>
+                      </a>
+                  </div>
+              </li>
+              <li class="text-sm leading-6">
+                  <div class="relative group">
+                      <div
+                          class="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
+                      </div>
+                          <div
+                              class="relative p-6 space-y-6 leading-none rounded-lg bg-slate-100 dark:bg-neutral-900 ring-1 ring-gray-900/5">
+                              <div class="flex items-center space-x-4"><img
+                                      src="../assets/reviews/chamith.avif"
+                                      class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Dan Schulman">
+                                  <div>
+                                      <h3 class="text-lg font-semibold dark:text-white">Chamith</h3>
+                                      <p class="dark:text-gray-500 text-md">Local Guide</p>
+                                  </div>
+                              </div>
+                              <p class="leading-normal dark:text-gray-300 text-md">Excellent Stay at Cottage Home, Belihuloya
+
+                                Cottage Home in Belihuloya exceeded all expectations. The facilities were impeccable, the location serene, and the owner incredibly accommodating. The cozy cottage was spotless, providing a perfect retreat amidst nature. Highly recommended for a peaceful getaway.</p>
+                          </div>
+                      </a>
+                  </div>
+              </li>
+              <li class="text-sm leading-6">
+                  <div class="relative group">
+                      <div
+                          class="absolute transition rounded-lg opacity-25 -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 blur duration-400 group-hover:opacity-100 group-hover:duration-200">
+                      </div>
+                          <div
+                              class="relative p-6 space-y-6 leading-none rounded-lg bg-slate-100 dark:bg-neutral-900 ring-1 ring-gray-900/5">
+                              <div class="flex items-center space-x-4"><img
+                                      src="../assets/reviews/thilina.avif"
+                                      class="w-12 h-12 bg-center bg-cover border rounded-full" alt="Satya Nadella">
+                                  <div>
+                                      <h3 class="text-lg font-semibold dark:text-white">Thiwanka</h3>
+                                      <p class="dark:text-gray-500 text-md">Traveller</p>
+                                  </div>
+                              </div>
+                              <p class="leading-normal dark:text-gray-300 text-md">👍NICEST PLACE TO STAY👍 <br>
+                                  10 out of 10
+                                As a traveller ,it can be termed as an extremely happy place to stay.The cleanliness and orderliness is a remarkable thing that I have seen.safety,friendliness and care are very high.HOT WATER,and MINI BAR facilities are also available.The owner of The COTTAGE HOME BELIHULOYA provides a service worth more than the money paid. 👍👍👍👍👍</p>
+                          </div>
+                      </a>
+                  </div>
+              </li>
+              
+          </ul>
+
+
+      </div>
+  </div>
+</section>
+
+<div class="flex justify-center dark:bg-neutral-900" data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="100" data-aos-offset="0" >
+    <h5 class="mt-2 mb-8 text-4xl font-bold text-blue-700 sm:text-4xl dark:text-white">Popular places near By</h5>
+</div>
+  <div class="flex items-center justify-center min-h-full bg-white dark:bg-neutral-900" data-aos="fade-up" data-aos-duration="3000">
+    <div class="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3 dark:bg-neutral-900">
+      <!-- First Item -->
+      <div class="relative items-center justify-center overflow-hidden transition-shadow cursor-pointer group hover:shadow-xl hover:shadow-black/30">
+        <div class="h-96 w-72">
+          <img class="object-cover duration-500 h-fulltransition-transform w-fulls group-hover:rotate-3 group-hover:scale-125" src="../assets/bamabarakanda.jpg" alt="" />
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div>
+        <div class="absolute inset-0 flex translate-y-[60%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0">
+          <h1 class="text-3xl font-bold text-white font-dmserif">Bamabarakanda Waterfall</h1>
+          <p class="mb-3 text-lg italic text-white transition-opacity duration-300 opacity-0 group-hover:opacity-100">Babarakanda falls is situated in Kalupahana.It can be found in a forest of pine trees.Traveling to this place is not easy as to the other falls of Sri Lanka.</p>
+          <a href="https://www.tripadvisor.com/Attraction_Review-g12549252-d1960476-Reviews-Bambarakanda_Falls-Kalupahana_Uva_Province.html">
+            <button class="rounded-full bg-neutral-900 py-2 px-3.5 font-com text-sm capitalize text-white shadow shadow-black/60">See More</button>
+        </a>
+        
+        </div>
+      </div>
+      <!-- Second Item -->
+      <div class="relative items-center justify-center overflow-hidden transition-shadow cursor-pointer group hover:shadow-xl hover:shadow-black/30">
+        <div class="h-96 w-72">
+          <img class="object-cover w-full h-full transition-transform duration-500 group-hover:rotate-3 group-hover:scale-125" src="../assets/pahanthudawa.jpg" alt="" />
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div>
+        <div class="absolute inset-0 flex translate-y-[60%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0">
+          <h1 class="text-3xl font-bold text-white font-dmserif">Pahanthudawa Waterfall</h1>
+          <p class="mb-3 text-lg italic text-white transition-opacity duration-300 opacity-0 group-hover:opacity-100">Beautiful waterfall and small. Visit there with family and young kids. It is a risk that visit this place with young kids.</p>
+          <a href="https://www.tripadvisor.com/Attraction_Review-g1061125-d15657370-Reviews-Pahanthudawa_Waterfall-Belihuloya_Sabaragamuwa_Province.html">
+            <button class="rounded-full bg-neutral-900 py-2 px-3.5 font-com text-sm capitalize text-white shadow shadow-black/60">See More</button>
+        </a>
+                </div>
+      </div>
+      <!-- Third Item -->
+      <div class="relative items-center justify-center overflow-hidden transition-shadow cursor-pointer group hover:shadow-xl hover:shadow-black/30">
+        <div class="h-96 w-72">
+          <img class="object-cover w-full h-full transition-transform duration-500 group-hover:rotate-3 group-hover:scale-125" src="../assets/bakers bend 2jpg.jpg" alt="" />
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div>
+        <div class="absolute inset-0 flex translate-y-[60%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0">
+          <h1 class="text-3xl font-bold text-white font-dmserif">Baker's Bend</h1>
+          <p class="mb-3 text-lg italic text-white transition-opacity duration-300 opacity-0 group-hover:opacity-100">Bakers bend,One of the scenic place in Sri lanka, is a viewpoint located at the 23rd bend of the Nonpareil estate road leading from Belihuloya to Nagrak Banglow.</p>
+          <a href="https://www.attractionsinsrilanka.com/travel-directory/bakers-bend/">
+            <button class="rounded-full bg-neutral-900 py-2 px-3.5 font-com text-sm capitalize text-white shadow shadow-black/60">See More</button>
+        </a>
+                </div>
+      </div>
+      <!-- Duplicate Items Start Here -->
+      <!-- First Duplicate Item -->
+      <div class="relative items-center justify-center overflow-hidden transition-shadow cursor-pointer group hover:shadow-xl hover:shadow-black/30">
+        <div class="h-96 w-72">
+          <img class="object-cover w-full h-full transition-transform duration-500 group-hover:rotate-3 group-hover:scale-125" src="../assets/Wangedigala-1.jpg" alt="" />
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div>
+        <div class="absolute inset-0 flex translate-y-[60%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0">
+          <h1 class="text-3xl font-bold text-white font-dmserif">Wangedigala Mountain</h1>
+          <p class="mb-3 text-lg italic text-white transition-opacity duration-300 opacity-0 group-hover:opacity-100">Wangedigala is a popular hiking spot situated in a village named Kalupahana.Mountain peak represents the shape of a pestle</p>
+          <a href="https://www.attractionsinsrilanka.com/travel-directory/wangedigala/#google_vignette">
+            <button class="rounded-full bg-neutral-900 py-2 px-3.5 font-com text-sm capitalize text-white shadow shadow-black/60">See More</button>
+        </a>
+                </div>
+      </div>
+      <!-- Second Duplicate Item -->
+      <div class="relative items-center justify-center overflow-hidden transition-shadow cursor-pointer group hover:shadow-xl hover:shadow-black/30">
+        <div class="h-96 w-72">
+          <img class="object-cover w-full h-full transition-transform duration-500 group-hover:rotate-3 group-hover:scale-125" src="../assets/smanalawewa 2.jpg_large" alt="" />
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div>
+        <div class="absolute inset-0 flex translate-y-[60%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0">
+          <h1 class="text-3xl font-bold text-white font-dmserif">Samanalawewa Reserviour</h1>
+          <p class="mb-3 text-lg italic text-white transition-opacity duration-300 opacity-0 group-hover:opacity-100">Samanalawewa Dam is a dam which is situated near Balangoda town in the Sabaragamuwa Province.Commissioned in the year 1992.</p>
+          <a href="https://www.attractionsinsrilanka.com/travel-directory/samanalawewa-dam/">
+            <button class="rounded-full bg-neutral-900 py-2 px-3.5 font-com text-sm capitalize text-white shadow shadow-black/60">See More</button>
+        </a>
+                </div>
+      </div>
+      <!-- Third Duplicate Item -->
+      <div class="relative items-center justify-center overflow-hidden transition-shadow cursor-pointer group hover:shadow-xl hover:shadow-black/30">
+        <div class="h-96 w-72">
+          <img class="object-cover w-full h-full transition-transform duration-500 group-hover:rotate-3 group-hover:scale-125" src="../assets/surathali ella 2.JPG" alt="" />
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70"></div>
+        <div class="absolute inset-0 flex translate-y-[60%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0">
+          <h1 class="text-3xl font-bold text-white font-dmserif">Surathaliella Waterfall</h1>
+          <p class="mb-3 text-lg italic text-white transition-opacity duration-300 opacity-0 group-hover:opacity-100">Surathali Ella waterfall is situated in Walhaputenna in the Ratnapura district. It is 60 meters high, 2 meters wide and is made up of 3 segments.</p>
+          <a href="https://www.attractionsinsrilanka.com/travel-directory/surathali-ella-waterfall/#google_vignette">
+            <button class="rounded-full bg-neutral-900 py-2 px-3.5 font-com text-sm capitalize text-white shadow shadow-black/60">See More</button>
+        </a>
+                </div>
+      </div>
+      <!-- Duplicate Items End Here -->
+    </div>
+    </div>
+
+
+    <footer class="flex flex-col justify-center space-y-10 dark:bg-neutral-900">
+
+        <nav class="flex flex-wrap justify-center gap-12 mt-8 font-bold text-gray-500">
+            <a class="text-blue-700 dark:hover:text-white hover:text-black" href="index.html">Home</a>
+            <a class="dark:hover:text-white hover:text-black" href="Cottages.html">Cottages</a>
+            <a class="dark:hover:text-white hover:text-black" href="ContactUs.html">Contact Us</a>
+            <a class="dark:hover:text-white hover:text-black" href="FAQ.html">FAQ</a>
+        </nav>
+    
+        <div class="flex justify-center space-x-5 ">
+            <a href="https://web.facebook.com/cottagehm" target="_blank" rel="noopener noreferrer">
+                <img src="https://img.icons8.com/fluent/30/000000/facebook-new.png" />
+            </a>
+            <a href="https://www.instagram.com/cottage_homeb?igsh=MTBid2tqMHN0bzR5dw==" target="_blank" rel="noopener noreferrer">
+                <img src="https://img.icons8.com/fluent/30/000000/instagram-new.png" />
+            </a>
+            <a href="https://web.facebook.com/messages/t/115301779853568" target="_blank" rel="noopener noreferrer">
+                <img src="https://img.icons8.com/fluent/30/000000/facebook-messenger--v2.png" />
+            </a>
+
+        </div>
+        <p class="font-medium text-center text-gray-700">&copy; 2024 Cottage Home Belihuloya <br>All rights reservered.</p>
+
+    </footer>
+    <p class="mb-2 font-medium text-center text-gray-700 dark:bg-neutral-900">Website Designed and Developed By <a href="https://bento.me/madhawaawishka" class="font-bold">madhawaawishka</a></p>
+ 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.4.1/flowbite.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+      </script>
+
+    
+
+
+
+
+
+  
+  
+
+
+
+</body>
+</html>

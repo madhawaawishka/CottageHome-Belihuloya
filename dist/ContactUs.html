@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <link rel="icon" type="image/jpg" href="../assets/logo1.png">
+        <script src="https://unpkg.com/flowbite@1.4.1/dist/flowbite.js"></script>
+        <script>
+            // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+            if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark')
+            }
+        </script>
+        <link rel="stylesheet" href="output.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cottage Home Belihuloya</title>
+    </head>
+    <body class="bg-slate-50 dark:bg-neutral-900">
+    
+        <nav class="bg-white border-gray-200 py-2.5 dark:bg-neutral-900">
+            <div class="flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto">
+                <a href="index.html" class="flex items-center">
+                    <img src="../assets/logo1.png" class="h-10 mr-3 sm:h-20" alt="CottageHome Logo">
+                </a>
+                <div class="flex items-center lg:order-2">
+                    <div class="hidden mt-2 mr-4 sm:inline-block">
+                        <span></span>
+                    </div>   
+                    <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
+                        <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                        <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+                    </button>
+            
+            
+                    <button data-collapse-toggle="mobile-menu-2" type="button"
+                        class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                        aria-controls="mobile-menu-2" aria-expanded="true">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <svg class="hidden w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="items-center justify-between w-full lg:flex lg:w-auto lg:order-1 " id="mobile-menu-2">
+                    <ul class="flex flex-col mt-4 font-bold lg:flex-row lg:space-x-8 lg:mt-0">
+                        <li>
+                            <a href="index.html"
+                            class="block py-2 pl-3 pr-4 text-black border-b border-gray-100 hover:bg-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-black lg:p-0 dark:text-white lg:dark:hover:text-white dark:hover:bg-neutral-800 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"                        aria-current="page">Home</a>
+                        </li>
+                        <li>
+                            <a href="Cottages.html"
+                                class="block py-2 pl-3 pr-4 text-black border-b border-gray-100 hover:bg-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-black lg:p-0 dark:text-white lg:dark:hover:text-white dark:hover:bg-neutral-800 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Cottages</a>
+                        </li>
+                        <li>
+                            <a href="ContactUs.html"
+                            class="block py-2 pl-3 pr-4 text-white rounded bg-neutral-800 dark:bg-neutral-900 lg:bg-transparent lg:text-blue-700 lg:p-0 dark:text-blue-700">Contact Us</a>
+                        </li>
+                        <li>
+                            <a href="FAQ.html"
+                            class="block py-2 pl-3 pr-4 text-black border-b border-gray-100 hover:bg-gray-100 lg:hover:bg-transparent lg:border-0 lg:hover:text-black lg:p-0 dark:text-white lg:dark:hover:text-white dark:hover:bg-neutral-800 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
+                            >FAQ</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    
+         <!-- javascript dark  mode triggers -->
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+         <script>
+             var themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+     var themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+     
+     // Change the icons inside the button based on previous settings
+     if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+         themeToggleLightIcon.classList.remove('hidden');
+     } else {
+         themeToggleDarkIcon.classList.remove('hidden');
+     }
+     
+     var themeToggleBtn = document.getElementById('theme-toggle');
+     
+     themeToggleBtn.addEventListener('click', function() {
+     
+         // toggle icons inside button
+         themeToggleDarkIcon.classList.toggle('hidden');
+         themeToggleLightIcon.classList.toggle('hidden');
+     
+         // if set via local storage previously
+         if (localStorage.getItem('color-theme')) {
+             if (localStorage.getItem('color-theme') === 'light') {
+                 document.documentElement.classList.add('dark');
+                 localStorage.setItem('color-theme', 'dark');
+             } else {
+                 document.documentElement.classList.remove('dark');
+                 localStorage.setItem('color-theme', 'light');
+             }
+     
+         // if NOT set via local storage previously
+         } else {
+             if (document.documentElement.classList.contains('dark')) {
+                 document.documentElement.classList.remove('dark');
+                 localStorage.setItem('color-theme', 'light');
+             } else {
+                 document.documentElement.classList.add('dark');
+                 localStorage.setItem('color-theme', 'dark');
+             }
+         }
+         
+     });
+         </script>
+
+
+
+      <section class="bg-white dark:bg-neutral-900" data-aos="fade-up" data-aos-duration="3000">
+        <div class="max-w-screen-md px-4 py-8 mx-auto lg:py-16">
+            <h2 class="mb-4 text-4xl font-extrabold tracking-tight text-center text-blue-700 dark:text-white">Contact Us</h2>
+            <p class="mb-8 font-medium text-center text-gray-800 lg:mb-16 dark:text-gray-400 sm:text-xl">Got a technical issue? Want to send feedback about a beta feature?Let us know.</p>
+            <form action="https://api.web3forms.com/submit" method="POST" class="space-y-8">
+                <input type="hidden" name="access_key" value="7926bb2f-61dd-4549-be7a-914c8697a7fd">
+                <div>
+                    <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Your email</label>
+                    <input type="email" name="email" id="email" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-neutral-800 dark:border-gray-800 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="someone@gmail.com" required>
+                </div>
+                <div>
+                    <label for="subject" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Subject</label>
+                    <input type="text" name="subject" id="subject" class="block w-full p-3 text-sm text-gray-900 border border-gray-300 rounded-lg shadow-sm bg-gray-50 focus:ring-primary-500 focus:border-primary-500 dark:bg-neutral-800 dark:border-gray-800 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="Let us know how we can help you" required>
+                </div>
+                <div class="sm:col-span-2">
+                    <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Your message</label>
+                    <textarea id="message" name="message" rows="6" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-neutral-800 dark:border-gray-800 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Leave a comment..."></textarea>
+                </div>
+                <button type="submit" class="px-5 py-3 font-semibold text-white bg-blue-600 rounded-lg dark:bg-blue-500 hover:bg-blue-700 dark:hover:bg-blue-400 focus:outline-none focus:ring-offset-2 focus:ring focus:ring-gray-200 ">Send message</button>
+            </form>
+        </div>
+      </section>
+
+
+
+
+
+    <section class="bg-gray-100 dark:bg-neutral-900" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine" data-aos-duration="500">
+        <div class="px-4 py-16 mx-auto max-w-7xl sm:px-6 lg:py-20 lg:px-8">
+            <div class="max-w-2xl mx-auto text-center lg:max-w-4xl">
+                <h2 class="text-5xl font-extrabold text-blue-700 dark:text-gray-100">Visit Our Location</h2>
+                <p class="mt-4 text-lg text-gray-800">Experience our exceptional stay</p>
+            </div>
+            <div class="mt-16 lg:mt-20">
+                <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
+                    <div class="overflow-hidden rounded-lg">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3962.420312693821!2d80.77877067475508!3d6.71845479327744!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae38bd91bde89d1%3A0x22ea9469b0f4509c!2sCottage%20Home%20Belihuloya!5e0!3m2!1sen!2slk!4v1718791544008!5m2!1sen!2slk" 
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <div>
+                        <div class="max-w-full mx-auto overflow-hidden rounded-lg">
+                            <div class="px-6 py-4">
+                                <h3 class="text-lg font-medium text-gray-900 dark:text-white">Address:</h3>
+                                <p class="mt-1 text-black ">Temple Road,Karagasthalawa,Belihuloya</p>
+                            </div>
+                            <div class="px-6 py-4 border-t border-gray-200">
+                                <h3 class="text-lg font-medium text-gray-900 dark:text-white">Email:</h3>
+                                <p class="mt-1 text-black">cottagehomeb@gmail.com</p>
+                            </div>
+                            <div class="px-6 py-4 border-t border-gray-200">
+                                <h3 class="text-lg font-medium text-gray-900 dark:text-white">Mobile Number:</h3>
+                                <p class="mt-1 text-black">+94718300378</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="flex flex-col justify-center space-y-10 dark:bg-neutral-900">
+
+        <nav class="flex flex-wrap justify-center gap-12 mt-8 font-bold text-gray-500">
+            <a class="dark:hover:text-white hover:text-black" href="index.html">Home</a>
+            <a class="dark:hover:text-white hover:text-black" href="Cottages.html">Cottages</a>
+            <a class="text-blue-700 dark:hover:text-white hover:text-black" href="ContactUs.html">Contact Us</a>
+            <a class="dark:hover:text-white hover:text-black" href="FAQ.html">FAQ</a>
+        </nav>
+    
+        <div class="flex justify-center space-x-5 ">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                <img src="https://img.icons8.com/fluent/30/000000/facebook-new.png" />
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+                <img src="https://img.icons8.com/fluent/30/000000/instagram-new.png" />
+            </a>
+            <a href="https://messenger.com" target="_blank" rel="noopener noreferrer">
+                <img src="https://img.icons8.com/fluent/30/000000/facebook-messenger--v2.png" />
+            </a>
+
+        </div>
+        <p class="font-medium text-center text-gray-700">&copy; 2024 Cottage Home Belihuloya <br>All rights reservered.</p>
+
+    </footer>
+    <p class="mb-2 font-medium text-center text-gray-700 dark:bg-neutral-900">Website Designed and Developed By <a href="https://bento.me/madhawaawishka" class="font-bold">madhawaawishka</a></p>
+ 
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+      </script>
+
+    
+    
+</body>
+</html>
